@@ -14,10 +14,12 @@ nav:
       - Getting Started: getting-started.md
   - API Docs:
       - API Authentication: api-docs/api.md
+      - Swagger API Endpoints: api-docs/api-endpoints.md
   - Mainfeatures Docs:
       - mainfeatures-docs: mainfeatures-docs/features.md
   - Technicalarchitecture Docs:
       - Architecture: technicalarchitecture-docs/architecture.md
+      - Roadmap: technicalarchitecture-docs/roadmap.md
   - Faq and Glossary:
       - faq_and_glossary: faq_and_glossary/faq.md
   - About:

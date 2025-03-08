@@ -1,0 +1,68 @@
+openapi: 3.0.0
+info:
+  title: Shopify Order Management API
+  version: "1.0.0"
+  description: >
+    API for managing Shopify orders, validating webhooks,
+    and handling supplier order dispatch via FTP.
+servers:
+  - url: https://docs-api/api
+paths:
+  /webhook:
+    post:
+      summary: Receive Shopify Webhook
+      description: >
+        Receives webhook notifications from Shopify when a new order is placed.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                order_id:
+                  type: integer
+                  example: 12345
+                customer:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                      example: "John Doe"
+                items:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      product_id:
+                        type: integer
+                        example: 9876
+                      quantity:
+                        type: integer
+                        example: 2
+      responses:
+        '200':
+          description: Webhook successfully processed.
+        '400':
+          description: Invalid request.
+  /orders:
+    get:
+      summary: Retrieve all orders
+      description: Returns a list of processed orders.
+      responses:
+        '200':
+          description: Successfully retrieved orders.
+  /order/{id}:
+    get:
+      summary: Retrieve order details
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Order details retrieved.
+        '404':
+          description: Order not found.

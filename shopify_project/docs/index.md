@@ -54,14 +54,15 @@ The **Shopify Order Handler** automates the lifecycle of customer orders from th
 ## 📁 Project Structure
 
 ```bash
-/opt/shopify-app
-├── app.py               # Main Flask API
-├── wsgi.py              # WSGI entrypoint
-├── data/                # SQLite Database
-├── logs/                # Log files
-├── shipment/            # Shipment handling
-├── stock/               # Inventory management scripts
-├── venv/                # Python virtual environment
-├── .env                 # Environment variables
-├── requirements.txt     # Python dependencies
-└── stock-update.py      # Automated inventory updater
+
+        /opt/shopify-app
+        ├── app.py               # Main Flask API
+        ├── wsgi.py              # WSGI entrypoint
+        ├── data/                # SQLite Database
+        ├── logs/                # Log files
+        ├── shipment/            # Shipment handling
+        ├── stock/               # Inventory management scripts
+        ├── venv/                # Python virtual environment
+        ├── .env                 # Environment variables
+        ├── requirements.txt     # Python dependencies
+        └── stock-update.py      # Automated inventory updater
