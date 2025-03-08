@@ -14,13 +14,13 @@ To ensure authenticity and security, the system verifies Shopify webhooks using 
 
 ## 🔒 Verification Process:
 
-Shopify includes an HMAC signature in the webhook headers.
+- Shopify includes an HMAC signature in the webhook headers.
 
-The application retrieves the X-Shopify-Hmac-SHA256 header.
+- The application retrieves the X-Shopify-Hmac-SHA256 header.
 
-The received signature is compared to a locally computed HMAC using the Shopify API Secret Key.
+- The received signature is compared to a locally computed HMAC using the Shopify API Secret Key.
 
-If the validation passes, the webhook data is processed.
+- If the validation passes, the webhook data is processed.
 
 # Example Python code for HMAC verification:
 
@@ -40,15 +40,15 @@ If the validation passes, the webhook data is processed.
 
 ## ✅ Order Processing and Supplier Integration
 
-Once the webhook is validated, the order is categorized based on the supplier responsible for fulfillment.
+- Once the webhook is validated, the order is categorized based on the supplier responsible for fulfillment.
 
-Identify supplier: Match products to predefined supplier categories (e.g., AGRIEST or FOURNIAL).
+- Identify supplier: Match products to predefined supplier categories (e.g., AGRIEST or FOURNIAL).
 
-Generate XML order files: Convert order data into XML format for FTP transmission.
+- Generate XML order files: Convert order data into XML format for FTP transmission.
 
-Send orders via FTP: Automatically send XML files to supplier FTP servers.
+- Send orders via FTP: Automatically send XML files to supplier FTP servers.
 
-Confirm order reception: Wait for acknowledgment from suppliers.
+- Confirm order reception: Wait for acknowledgment from suppliers.
 
 # Example structure of generated XML order:
 
@@ -69,13 +69,13 @@ Confirm order reception: Wait for acknowledgment from suppliers.
 
 To enhance reliability, the application includes detailed logging and automated error management:
 
-Log all incoming webhooks in /opt/shopify-app/logs/app.log.
+- Log all incoming webhooks in /opt/shopify-app/logs/app.log.
 
-Track API call failures and retries.
+- Track API call failures and retries.
 
-Identify webhook validation errors (e.g., incorrect HMAC signatures).
+- Identify webhook validation errors (e.g., incorrect HMAC signatures).
 
-Handle failed FTP transmissions and retry sending.
+- Handle failed FTP transmissions and retry sending.
 
 # Example Python logging setup:
 

@@ -8,15 +8,15 @@ The application consists of multiple components that work together to process Sh
 
 ## 🏗 Main Components
 
-Flask (Python Backend): Handles webhook processing, API requests, and order data management.
+- Flask (Python Backend): Handles webhook processing, API requests, and order data management.
 
-Nginx (Reverse Proxy): Acts as an intermediary between external requests and the Flask application, ensuring secure and efficient request handling.
+- Nginx (Reverse Proxy): Acts as an intermediary between external requests and the Flask application, ensuring secure and efficient request handling.
 
-SQLite (Database): Stores order data, logs, and supplier information for quick retrieval and record-keeping.
+- SQLite (Database): Stores order data, logs, and supplier information for quick retrieval and record-keeping.
 
-FTP Integration: Transmits order files in XML format to supplier servers for order fulfillment.
+- FTP Integration: Transmits order files in XML format to supplier servers for order fulfillment.
 
-Systemd Service: Ensures continuous application uptime and automatic restart upon failure.
+- Systemd Service: Ensures continuous application uptime and automatic restart upon failure.
 
 ## ✅ Architecture Diagram (Mermaid)
 
